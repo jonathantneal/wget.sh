@@ -5,15 +5,61 @@
 <style>
 body { font: 100%/1.5 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 body { margin: 0 auto; max-width: 40em; padding: 1em; }
-pre { border: 1px solid #CCC; border-radius: .25em; padding: .5em; }
+p code, blockquote { border-radius: .25em; }
+p code { border: 1px solid #CCC; background-color: #F5F5F5; display: inline-block; padding: 0.25em; line-height: 1; }
+blockquote { background-color: #F5F5F5; color: #113; margin: 1em 0; padding: .5em; }
+blockquote code { display: block; min-height: 1.25em; }
+a { text-decoration: none; }
+p a { border-bottom: 1px dotted #AAA; color: #44F; }
 </style>
 <body>
 	<h1>wget.sh</h1>
 	<p>
-		<strong>wget.sh</strong> is a cloud-based installer.
-		Ask it for something &mdash; it will detect your platform, your package manager, and install that for you.
-		It combines brew, apt, yum, etc all into one.
+		<strong>wget.sh</strong> is a cloud-based app installer.
+		Ask it for something &mdash; it will detect your system configuration, your package manager, and install it for you.
 	</p>
-	<p>Paste this into your terminal.</p>
-	<pre>bash &lt;(curl -s wget.sh)</pre>
+	<p>
+		Just paste this into your terminal.
+	</p>
+	<blockquote>
+		<code>bash &lt;(curl -s wget.sh)</code>
+	</blockquote>
+	<p>
+		You will be greeted with a friendly message.
+	</p>
+	<blockquote>
+		<code>Welcome to web.sh. What would you like to install:</code>		
+	</blockquote>
+	<p>
+		Not sure what to install? Type <code>help</code> to get a list of available apps.
+	</p>
+	<blockquote>
+		<code>Welcome to web.sh. What would you like to install: help</code>
+		<code></code>
+		<code>Try one of the following apps:</code>
+		<code></code>
+		<code>· adium</code>
+		<code>· chrome</code>
+		<code>· droplr</code>
+		<code>...</code>
+	</blockquote>
+	<p>
+		Looking for a particular app? Type <code>help YOUR_APP_NAME</code> to search for matching apps.
+	</p>
+	<blockquote>
+		<code>Welcome to web.sh. What would you like to install: help op</code>
+		<code></code>
+		<code>Try one of the following apps:</code>
+		<code></code>
+		<code>· droplr</code>
+		<code>· imageoptim</code>
+		<code>· kaleidoscope</code>
+		<code>· opera</code>
+		<code>...</code>
+		<code></code>
+		<code>What would you like to install:</code>
+	</blockquote>
+	<p>
+		Unable to find the app your looking for? Please <a href="//github.com/jonathantneal/wget.sh/issues/new">file an issue</a> or <a href="https://github.com/jonathantneal/wget.sh">contribute to this project</a>.
+	</p>
 </body>
