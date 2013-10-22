@@ -61,7 +61,7 @@ function helper_get_contents($list) {
 function main() {
 	// get url path
 	$path = substr($_SERVER['DOCUMENT_ROOT'].(
-		$_SERVER['QUERY_STRING'] ? substr($_SERVER['REQUEST_URI'], 0, - 1 - strlen($_SERVER['QUERY_STRING'])) : $_SERVER['REQUEST_URI']
+		$_SERVER['QUERY_STRING'] || substr($_SERVER['REQUEST_URI'], -1) === '?' ? substr($_SERVER['REQUEST_URI'], 0, - 1 - strlen($_SERVER['QUERY_STRING'])) : $_SERVER['REQUEST_URI']
 	), strlen(dirname(__FILE__)) + 1);
 
 	// get user agent
@@ -94,7 +94,7 @@ function main() {
 	}
 
 	// if path is empty
-	if (preg_match('/^$/', $path)) {
+	if (empty($path)) {
 		// if user agent is empty or curl
 		if (preg_match('/^$|^curl/', $user)) {
 			// exit as readme bash contents
