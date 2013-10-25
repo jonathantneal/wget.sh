@@ -99,3 +99,11 @@ if [[ -d "$VOLS/$NAME" ]]; then
 	# attempt to detach
 	hdiutil detach -quiet "$VOLS/$NAME"
 fi
+
+read -p "So, what would you like to install: " NAME
+
+if [ "$NAME" == "exit" ] || [ "$NAME" == "" ]; then
+	echo "Very well. Have a nice day!"
+else
+	bash <(curl wget.sh/${NAME/ /+} -s -L -A "")
+fi
