@@ -11,7 +11,7 @@ if [[ -n "$LINK" && ! -n "$DEST" ]]; then
 fi
 
 # detect existing install
-if [[ -n "$LINK" && ! -f "$DEST/$LINK" || ! -d "$DEST/$LINK" ]]; then
+if [[ -n "$LINK" ]] && [[ -f "$DEST/$LINK" || -d "$DEST/$LINK" ]]; then
 	TEXT="$NAME is installed. Install again? (y/n)? "
 else
 	TEXT="Would like to install $NAME? (y/n)? "
