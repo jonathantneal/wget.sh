@@ -1,3 +1,5 @@
+Header always set Strict-Transport-Security "31556900"
+
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 
