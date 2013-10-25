@@ -67,8 +67,6 @@ function main() {
 	// get user agent
 	$user = $_SERVER['HTTP_USER_AGENT'];
 
-
-
 	// if path is file
 	if (file_exists($path)) {
 		// exit as contents
@@ -88,7 +86,7 @@ function main() {
 	}
 
 	// if path includes help request
-	if (preg_match('/^help(.+)?$/', $path, $matches)) {
+	if (preg_match('/^help(.*)$/', $path, $matches)) {
 		// exit as helper bash
 		exit_set_contents(helper_get_contents(trim($matches[1])));
 	}
