@@ -5,7 +5,7 @@
 Just paste this into your terminal.
 
 ```sh
-bash <(curl -s wget.sh)
+bash <(curl wget.sh -s -L)
 ```
 
 You will be greeted with a friendly message.
