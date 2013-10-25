@@ -4,6 +4,5 @@ Header always set Strict-Transport-Security "31556900"
 	RewriteEngine on
 
 	# redirect to the router
-	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteRule ^.*$ index.php [L]
 </IfModule>
