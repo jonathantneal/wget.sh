@@ -1,5 +1,5 @@
 {
 	"name": "Bitcasa",
 	"href": "https://www.bitcasa.com/download/mac",
-	"link": "Bitcasa.app"
+	"mpkg": "InstallBitcasa.pkg"
 }
