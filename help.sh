@@ -1,4 +1,5 @@
 if [ -n "$APPS" ]; then
+	IFS=
 	echo -e "\nTry one of the following apps:\n"
 	echo -e $APPS
 else

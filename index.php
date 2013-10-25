@@ -33,8 +33,8 @@ function helper_get_contents($list) {
 	$list = trim(urldecode($list)) ? explode(' ', trim(urldecode($list))) : array();
 	$bash = '';
 
-	foreach (glob('json/*') as $name) {
-		$name = basename($name, '.json');
+	foreach (glob('{bash/*,json/*}', GLOB_BRACE) as $name) {
+		$name = preg_replace('/\\.[^.\\s]+$/', '', basename($name));
 
 		if (empty($list)) {
 			array_push($grid, $name);
@@ -50,7 +50,17 @@ function helper_get_contents($list) {
 	}
 
 	if (count($grid)) {
-		$bash .= 'APPS="· '.implode('\n· ', $grid).'"'.PHP_EOL.PHP_EOL;
+		$bash .= 'APPS="';
+		$tabs = 2;
+		$gaps = '                        ';
+
+		foreach ($grid as $name) {
+			$bash .= '· '.$name.(!$tabs ? '\n' : substr($gaps, strlen($name)));
+
+			$tabs = !$tabs ? 2 : --$tabs;
+		}
+
+		$bash .= '"'.PHP_EOL.PHP_EOL;
 	}
 
 	$bash .= file_get_contents('help.sh');
